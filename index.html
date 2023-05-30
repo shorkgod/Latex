@@ -86,27 +86,27 @@
         ¥: "y",
         √: "z"
       }
-    function ToLatex() {
-      let input = ToLatexInput.value
-      if (typeof input === "string") {
-        input = input.toLowerCase()
-        let output = "";
-        for (letter of input) {
-          output += LatexList[letter] ? LatexList[letter] : letter;
+      function ToLatex() {
+        let input = ToLatexInput.value
+        if (typeof input === "string") {
+          input = input.toLowerCase()
+          let output = "";
+          for (letter of input) {
+            output += LatexList[letter] ? LatexList[letter] : letter;
+          };
+          ToLatexInput.value = output
         };
-        ToLatexInput.value = output
       };
-    };
-    function FromLatex() {
-      let input = FromLatexInput.value
-      if (typeof input === "string") {
-        let output = "";
-        for (letter of input) {
-          output += EnglishSpanishList[letter] ? EnglishSpanishList[letter] : letter;
+      function FromLatex() {
+        let input = FromLatexInput.value
+        if (typeof input === "string") {
+          let output = "";
+          for (letter of input) {
+            output += EnglishSpanishList[letter] ? EnglishSpanishList[letter] : letter;
+          };
+          ToLatexInput.value = output
         };
-        ToLatexInput.value = output
       };
-    };
     </script>
   </body>
 </html>

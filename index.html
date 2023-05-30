@@ -60,6 +60,31 @@
       }
       let EnglishSpanishList = {
         "σ": "a",
+        "£": "b",
+        "Ǝ": "c",
+        "₳": "d",
+        "ε": "e",
+        "┘": "f",
+        "Γ": "g",
+        "μ": "h",
+        "∩": "i",
+        "ſ": "j",
+        "≡": "k",
+        "Œ": "l",
+        "ß": "m",
+        "þ": "n",
+        "⌐": "o",
+        "Æ": "p",
+        "¶": "q",
+        "Ω": "r",
+        "Φ": "s",
+        "┼": "t",
+        "↨": "u",
+        "‡": "v",
+        "w": "w",
+        "⋛": "x",
+        "¥": "y",
+        "√": "z"
       }
       function ToLatex() {
         let input = ToLatexInput.value
@@ -79,7 +104,7 @@
           for (letter of input) {
             output += EnglishSpanishList[letter] ? EnglishSpanishList[letter] : letter;
           };
-          ToLatexInput.value = output
+          FromLatexInput.value = output
         };
       };
     </script>

@@ -23,7 +23,89 @@
     <h1>TSC Latex Language Translator</h1>
     <h2>Made by SharkOwO</h2>
     
-    <textarea id="ToLatex" style="width: 450px; background-color:rgba(10,10,10,1)" placeholder="English/Spanish to Latex"></textarea>
-    <button onclick="ToLatex()" style="background-color:rgb(10,10,10)">Translate</button>
+    <textarea id="ToLatex" style="width: 500px; background-color:rgba(33,33,33,1)" placeholder="English/Spanish to Latex"></textarea><br>
+    <button onclick="ToLatex()" style="background-color:rgb(33,33,33)">Translate</button><br>
+    <textarea id="FromLatex" style="width: 500px; background-color:rgba(33,33,33,1)" placeholder="Latex to English/Spanish"></textarea><br>
+    <button onclick="FromLatex()" style="background-color:rgb(33,33,33)">Translate</button>
+    <script>
+      let ToLatexInput = document.getElementById("ToLatex");
+      let FromLatexInput = document.getElementById("FromLatex");
+ 			let LatexList = {
+        a: "σ",
+        b: "£",
+        c: "Ǝ",
+        d: "₳",
+        e: "ε",
+        f: "┘",
+        g: "Γ",
+        h: "μ",
+        i: "∩",
+        j: "ſ",
+        k: "≡",
+        l: "Œ",
+        m: "ß",
+        n: "þ",
+        o: "⌐",
+        p: "Æ",
+        q: "¶",
+        r: "Ω",
+        s: "Φ",
+        t: "┼",
+        u: "↨",
+        v: "‡",
+        w: "w",
+        x: "⋛",
+        y: "¥",
+        z: "√"
+      }
+      let EnglishSpanishList = {
+        σ: "a",
+        £: "b",
+        Ǝ: "c",
+        ₳: "d",
+        ε: "e",
+        ┘: "f",
+        Γ: "g",
+        μ: "h",
+        ∩: "i",
+        ſ: "j",
+        ≡: "k",
+        Œ: "l",
+        ß: "m",
+        þ: "n",
+        ⌐: "o",
+        Æ: "p",
+        ¶: "q",
+        Ω: "r",
+        Φ: "s",
+        ┼: "t",
+        ↨: "u",
+        ‡: "v",
+        w: "w",
+        ⋛: "x",
+        ¥: "y",
+        √: "z"
+      }
+    function ToLatex() {
+      let input = ToLatexInput.value
+      if (typeof input === "string") {
+        input = input.toLowerCase()
+        let output = "";
+        for (letter of input) {
+          output += LatexList[letter] ? LatexList[letter] : letter;
+        };
+        ToLatexInput.value = output
+      };
+    };
+    function FromLatex() {
+      let input = FromLatexInput.value
+      if (typeof input === "string") {
+        let output = "";
+        for (letter of input) {
+          output += EnglishSpanishList[letter] ? EnglishSpanishList[letter] : letter;
+        };
+        ToLatexInput.value = output
+      };
+    };
   </body>
 </html>

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Latex Language Translator</title>
+    <title>Latex Language Translator v1.0.0</title>
     <link rel="icon" type="image/x-icon"  href="tsc_icon.ico"></link>
     <style>
       body {
-        background-color:rgb(0,0,0);
+        background-image: url('U4.webp');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
       }
       a {
         color: rgb(255,255,255)
@@ -18,23 +22,41 @@
       font-family: "Gotham SSm";
       color: white;
       }
+      .background {
+      background-color:rgb(0,0,0,0.5);
+      border-radius: 15px;
+      margin: 15px 15px;
+      padding: 15px
+      }
+      .container {
+      display: flex;
+      align-items: center;
+      justify-content: center
+      }
     </style>
   </head>
   <body><center>
-    <img src="tsc_icon.png" alt="TSC Icon" /><h1>TSC Latex Language Translator</h1>
-    <h2>Made by <a href="https://github.com/SharkOwO">SharkOwO</a></h2>
-    <h3>Supports English and Spanish!<h3>
-    <h3>Note: For spanish letters like "ñ", "ç" and "ü" uses different characters than the original ones.</h3>    
-	    
-    <textarea id="ToLatex" cols="150" rows="10" style="resize:none; background-color:rgba(33,33,33,1); border-radius: 10px; margin: 5px 0px;" placeholder="English/Spanish to Latex"></textarea><br>
-    <button onclick="ToLatex()" style="background-color:rgb(33,33,33); border: none; padding: 20px; text-align: center; font-size: 15px; border-radius: 10px; margin: 5px 0px;">Translate to Latex</button><br><br>
-    <textarea id="FromLatex" cols="150" rows="10" style="resize:none; background-color:rgba(33,33,33,1); border-radius: 10px; margin: 5px 0px;" placeholder="Latex to English/Spanish"></textarea><br>
-    <button onclick="FromLatex()" style="background-color:rgb(33,33,33); border: none; padding: 20px; text-align: center; font-size: 15px; border-radius: 10px; margin: 5px 0px;">Translate to English/Spanish</button>
-
-    <h2>Credits:</h2>
-    <h3>- <a href="https://www.roblox.com/groups/11577231/Thunder-Scientific-Corporation#!/about">Thunder Scientific Corporation</a> for the Latex Language letter set.</h3>
-    <h3>- <a href="https://nikothegamer100.github.io/latex-language-translator/">nikothegamer#5275</a> for the original idea.</h3>
-    <h3>- <a href="https://vvv331.github.io/TSCLatexTranslator/">vvv331#4056</a> for some parts of the code.</h3>
+    <div class="background">
+      <div class="container">
+        <img src="tsc_icon.png" width="75" height="75" />
+        <h1>TSC Latex Language Translator v1.0.0</h1><h3 style="text-indent:30px">By <a href="https://github.com/LatexGod">LatexGod</a></h3>
+        <img src="tsc_icon.png" width="75" height="75" />
+      </div>
+      <div class="container">
+        <textarea id="ToLatex" cols="150" rows="10" style="resize:none; border: 1px solid white; background-color:rgba(0,0,0,0.25); border-radius: 15px; margin: 5px 0px;" placeholder="English/Spanish to Latex"></textarea>
+        <textarea id="FromLatex" cols="150" rows="10" style="resize:none; border: 1px solid white; background-color:rgba(0,0,0,0.25); border-radius: 15px; margin: 5px 0px;" placeholder="Latex to English/Spanish"></textarea>
+      </div>
+      <div class="container">
+        <button onclick="ToLatex()" style="background-color:rgb(0,0,0,0.25); border: 1px solid white; width: 1000px; height: 75px; text-align: center; font-size: 15px; border-radius: 15px; margin: 5px 0px;">Translate to Latex</button>
+        <button onclick="FromLatex()" style="background-color:rgb(0,0,0,0.25); border: 1px solid white; width: 1000px; height: 75px; text-align: center; font-size: 15px; border-radius: 15px; margin: 5px 0px;">Translate to English/Spanish</button>
+      </div>
+      <h2>Credits:</h2>
+      <ul>
+        <li><h3><a href="https://www.roblox.com/groups/11577231/Thunder-Scientific-Corporation#!/about">Thunder Scientific Corporation</a> for the Latex Language letter set and the images.</h3></li>
+        <li><h3><a href="https://nikothegamer100.github.io/latex-language-translator/">nikothegamer100</a> for the original idea.</h3></li>
+        <li><h3><a href="https://vvv331.github.io/TSCLatexTranslator/">vvv331</a> for some parts of the code.</h3></li>
+      </ul>
+    </div>
     <script>
       let ToLatexInput = document.getElementById("ToLatex");
       let FromLatexInput = document.getElementById("FromLatex");

@@ -1,9 +1,6 @@
 # Latex Language Translator
 Thunder Scientific Corporation Latex Creatures Language Translator.
 
-Supports English and Spanish!
-
-Note: For spanish letters like "ñ", "ç" and "ü" uses different characters than the original ones.
 # Alphabet
 | English/Spanish | Latex |
 | ---------- | ------- |

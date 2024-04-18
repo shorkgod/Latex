@@ -12,16 +12,20 @@ const InvertedCharacters = Object.fromEntries(
   Object.entries(Characters).map(([key, value]) => [value, key])
 );
 
-function TransformText(input, map) {
+function TransformToLatex(input, map) {
   return input.split('').map(char => map[char.toLowerCase()] || char).join('');
 }
 
+function TransformToNative(input, map) {
+  return input.split('').map(char => map[char] || char).join('');
+}
+
 function NativeToLatex() {
-  LatexInput.value = TransformText(NativeInput.value, Characters);
+  LatexInput.value = TransformToLatex(NativeInput.value, Characters);
 }
 
 function LatexToNative() {
-  NativeInput.value = TransformText(LatexInput.value, InvertedCharacters);
+  NativeInput.value = TransformToNative(LatexInput.value, InvertedCharacters);
 }
 
 NativeInput.addEventListener('input', NativeToLatex);

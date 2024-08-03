@@ -3,41 +3,55 @@
   src: url("static/Inconsolata-Regular.ttf");
 }
 
+:root {
+  --bg-color: rgb(25, 25, 25);
+  --text-color: white;
+  --link-color: #5096be;
+  --link-hover-color: #0073e6;
+  --border-color: white;
+  --footer-text-color: #bbb;
+  --font-size-base: 1rem;
+  --font-size-large: 1.5rem;
+  --padding: 0.5rem;
+  --margin: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  color: white;
+  color: var(--text-color);
   font-family: "Inconsolata", monospace;
-  background: rgb(25, 25, 25);
+  background: var(--bg-color);
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
 body {
-  flex: 1;
+  min-height: 100vh;
 }
 
 .center {
-  max-width: 95%;
   flex: 1;
+  max-width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.background {
-  width: 100%;
-  margin: 15px;
-  padding: 15px;
+  text-align: center;
 }
 
 .title .title-text {
   display: block;
   color: #5096be;
-  font-size: 1.5rem;
+  font-size: var(--font-size-large);
   margin: 0.5rem 0;
 }
 
@@ -45,35 +59,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 textarea {
   width: 100%;
   max-width: 900px;
   resize: none;
-  border: 1px solid white;
+  border: 1px solid var(--border-color);
   background: transparent;
-  color: white;
-  font-size: 20pt;
-  margin: 5px 0;
-  padding: 10px;
-  box-sizing: border-box;
+  color: #ddd;
+  font-size: var(--font-size-large);
+  margin: 0.5rem 0;
+  padding: var(--padding);
   border-radius: 0;
   outline: none;
 }
 
 textarea:focus {
-  border-color: white;
-  box-shadow: none;
+  border-color: var(--link-color);
 }
 
 .footer {
-  background: rgb(25, 25, 25);
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
+  background: var(--bg-color);
+  color: var(--footer-text-color);
+  padding: var(--padding);
   font-size: 0.8rem;
-  border-top: none;
 }
 
 .footer p {
@@ -81,10 +92,11 @@ textarea:focus {
 }
 
 .footer a {
-  color: rgb(0, 112, 224);
+  color: var(--link-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  color: var(--link-hover-color);
 }

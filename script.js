@@ -1,6 +1,7 @@
 (function() {
   const nativeInput = document.getElementById("NativeTextarea");
   const latexInput = document.getElementById("LatexTextarea");
+  const copyButton = document.getElementById("copyButton");
 
   const characters = {
     '0': "⏴", '1': "●", '2': "▬", '3': "▲", '4': "■", '5': "▱", '6': "◈", '7': "▩", '8': "▣", '9': "⏵",
@@ -29,6 +30,18 @@
     nativeInput.value = toNative(latexInput.value, invertedCharacters);
   }
 
+  function copyLatexToClipboard() {
+    navigator.clipboard.writeText(latexInput.value).then(() => {
+      copyButton.textContent = 'Latex Copied to Clipboard!';
+      setTimeout(() => {
+        copyButton.textContent = 'Copy Latex to Clipboard';
+      }, 1000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+
   nativeInput.addEventListener('input', nativeToLatex);
   latexInput.addEventListener('input', latexToNative);
+  copyButton.addEventListener('click', copyLatexToClipboard);
 })();
